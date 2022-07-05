@@ -3,7 +3,11 @@
     <div>
       <h3>Create User</h3>
     </div>
+
+    <!-- User Form Binding -->
     <form [formGroup]="requestForm" class="mt-3 formSet">
+
+      <!-- User Name-->
       <div>
         <label for="user_name">User Name</label>
         <input class="form-control" formControlName="user_name" placeholder="User Name" [ngClass]="{
@@ -11,6 +15,8 @@
               requestForm.get('user_name')?.hasError('required') &&
               requestForm.get('user_name')?.touched
           }" />
+
+        <!-- User Name Validation -->
         <div *ngIf="
             requestForm.get('user_name')?.invalid &&
             requestForm.get('user_name')?.touched
@@ -21,6 +27,7 @@
         </div>
       </div>
 
+      <!-- User Position-->
       <div>
         <label for="user_name">Position</label>
         <input class="form-control" formControlName="position_emp" placeholder="Position" [ngClass]="{
@@ -28,6 +35,8 @@
               requestForm.get('position_emp')?.hasError('required') &&
               requestForm.get('position_emp')?.touched
           }" />
+
+        <!-- Position Validation -->
         <div *ngIf="
             requestForm.get('position_emp')?.invalid &&
             requestForm.get('position_emp')?.touched
@@ -38,6 +47,7 @@
         </div>
       </div>
 
+      <!-- User Phone-->
       <div>
         <label for="user_name">Phone</label>
         <input class="form-control" formControlName="phone" placeholder="Phone" [ngClass]="{
@@ -45,6 +55,8 @@
               requestForm.get('phone')?.hasError('required') &&
               requestForm.get('phone')?.touched
           }" />
+
+        <!-- Phone Validation -->
         <div *ngIf="
             requestForm.get('phone')?.invalid &&
             requestForm.get('phone')?.touched
@@ -55,6 +67,7 @@
         </div>
       </div>
 
+      <!-- User First Name-->
       <div>
         <label for="user_name">First Name</label>
         <input class="form-control" formControlName="first_name" placeholder="First Name" [ngClass]="{
@@ -62,6 +75,8 @@
               requestForm.get('first_name')?.hasError('required') &&
               requestForm.get('first_name')?.touched
           }" />
+
+        <!-- First Name Validation -->
         <div *ngIf="
             requestForm.get('first_name')?.invalid &&
             requestForm.get('first_name')?.touched
@@ -72,6 +87,7 @@
         </div>
       </div>
 
+      <!-- User Last Name-->
       <div>
         <label for="user_name">Last Name</label>
         <input class="form-control" formControlName="last_name" placeholder="Last Name" [ngClass]="{
@@ -79,6 +95,8 @@
               requestForm.get('last_name')?.hasError('required') &&
               requestForm.get('last_name')?.touched
           }" />
+
+        <!-- Last Name Validation -->
         <div *ngIf="
             requestForm.get('last_name')?.invalid &&
             requestForm.get('last_name')?.touched
@@ -89,6 +107,7 @@
         </div>
       </div>
 
+      <!-- User Company-->
       <div>
         <label for="user_name">Company </label>
         <input class="form-control" formControlName="company" placeholder="Company" [ngClass]="{
@@ -96,6 +115,8 @@
               requestForm.get('company')?.hasError('required') &&
               requestForm.get('company')?.touched
           }" />
+
+        <!-- Comnpany Validation -->
         <div *ngIf="
             requestForm.get('company')?.invalid &&
             requestForm.get('company')?.touched
@@ -106,6 +127,8 @@
         </div>
       </div>
       <div>
+
+        <!-- For User Save button -->
         <button class="btn btn-primary" [disabled]="requestForm.status == 'INVALID'" (click)="createUser()">
           Save
         </button>
@@ -116,6 +139,8 @@
     <div>
       <h1>List of users</h1>
     </div>
+
+    <!-- User Listing -->
     <table class="table table-bordered">
       <thead>
         <tr>
