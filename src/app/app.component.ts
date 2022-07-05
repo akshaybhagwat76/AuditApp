@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UtilsService } from './services/utils.service';
-export class user {}
+import { UserList } from './model/user-list';
+import { UtilsService } from './utils.service';
+
+export class user { }
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,7 @@ export class user {}
 export class AppComponent implements OnInit {
   users: any;
 
+  // For User Create Form
   requestForm = this.fb.group({
     user_name: ['', [Validators.required]],
     position_emp: ['', [Validators.required]],
@@ -20,21 +23,24 @@ export class AppComponent implements OnInit {
     company: ['', [Validators.required]],
   });
 
-  constructor(private utils: UtilsService, private fb: FormBuilder) {}
+  constructor(private utils: UtilsService, private fb: FormBuilder) { }
   ngOnInit(): void {
     this.getdata();
   }
 
+  // For Getting User List
   getdata() {
     this.utils.getRole().subscribe((response: user) => {
       this.users = response;
     });
   }
 
+  // For Creating User
   createUser() {
     this.utils.createUser(this.requestForm.value).subscribe((res) => {
       this.getdata();
       this.requestForm.reset();
+      console.log(res);
     });
   }
 }
