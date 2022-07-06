@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserList } from './model/user-list';
-import { UtilsService } from './utils.service';
+import { UtilsService } from './services/utils.service';
 
 export class user { }
 
